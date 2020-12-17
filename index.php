@@ -24,11 +24,11 @@ include_once __DIR__ . '/scripts/database.php';
         
             <div class="user">
                 <div class="personal">
-                    <h5>Upgrade</h5>
+                    <div class="btn">
+                        <h4>Upgrade</h4>
+                    </div>
                     <img src="./img/logo.png" alt="User">
-                    <h5>Frankie</h5>
-                    <i 
-                    class="fas fa-angle-down"></i>
+                    <h5>Frankie<i class="fas fa-angle-down"></i></h5>
                 </div>
             </div>
         </header>

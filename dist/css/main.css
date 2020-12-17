@@ -31,6 +31,7 @@ header {
   width: 100%;
   z-index: 1;
   background: rgba(0, 0, 0, 0.5);
+  padding: 8px 40px;
 }
 header .logo img {
   max-height: 60px;
@@ -42,8 +43,35 @@ header .personal {
   align-items: center;
   color: #fff;
 }
+header .personal .btn {
+  margin-top: 12px;
+  margin-right: 20px;
+  height: 40px;
+  padding: 11px 25px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  border-radius: 25px;
+}
+header .personal .btn:hover {
+  transition: all 0.4s ease;
+  scale: 1.1;
+  background: #fff;
+  color: #000;
+}
 header .personal img {
   max-width: 30px;
+  padding-top: 10px;
+  margin-right: 15px;
+}
+header .personal h5 {
+  padding: 12px 5px 0 0;
+}
+header .personal h5 i {
+  padding: 5px;
 }
 
 .list-cd {
@@ -67,7 +95,7 @@ header .personal img {
   text-align: center;
   background: #000;
   color: #fff;
-  border-radius: 12px;
+  border-radius: 15px;
   position: relative;
   overflow: hidden;
   cursor: -webkit-grab;
@@ -92,7 +120,7 @@ header .personal img {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 70px;
-  color: white;
+  color: #fff;
 }
 .list-cd .collection .album .album-cover img {
   min-height: 170px;
