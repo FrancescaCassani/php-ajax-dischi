@@ -1,0 +1,75 @@
+/* GENERALS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#spotify {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Set images */
+img {
+  max-width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2e3a46;
+}
+header .logo img {
+  max-height: 60px;
+}
+header .personal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+header .personal img {
+  max-width: 30px;
+}
+
+.list-cd {
+  flex-grow: 1;
+}
+.list-cd .collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 15px;
+  list-style: none;
+}
+.list-cd .collection .album {
+  flex-basis: 200px;
+  margin: 15px 25px;
+  padding: 25px;
+  text-align: center;
+  background: #2e3a46;
+  color: #fff;
+}
+.list-cd .collection .album .album-cover img {
+  min-height: 170px;
+}
+.list-cd .collection .album .title {
+  font-size: 21px;
+  text-transform: uppercase;
+  margin: 8px 0;
+}
+.list-cd .collection .album .author,
+.list-cd .collection .album .year {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+.list-cd .collection .album .genre {
+  font-size: 14px;
+}

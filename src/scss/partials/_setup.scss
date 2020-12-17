@@ -1,0 +1,22 @@
+/* GENERALS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#spotify {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* Set images */
+img {
+    max-width: 100%;
+  }
