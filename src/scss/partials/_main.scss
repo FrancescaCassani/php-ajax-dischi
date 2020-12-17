@@ -21,6 +21,12 @@
             position: relative;
             overflow: hidden; 
             cursor: grab;
+            transition: all 0.5s ease;
+            filter: grayscale(0);
+            &:hover {
+                transform: rotate(2deg);
+                filter: grayscale(100%);
+            }
             .layover {
                 @include center('center');
                 width: 100%;
@@ -30,10 +36,13 @@
                 transition: opacity .4s;
                 &:hover, &:active {
                     opacity: 1;
+                    transition: all .4s ease;
+                    scale: 1.2;
+                    transform: rotate(-10deg);
                 }
                 i {
                     @include center('both');
-                    font-size: 70px;
+                    font-size: 80px;
                     color: $white;
                 }
             }

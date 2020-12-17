@@ -100,6 +100,12 @@ header .personal h5 i {
   overflow: hidden;
   cursor: -webkit-grab;
   cursor: grab;
+  transition: all 0.5s ease;
+  filter: grayscale(0);
+}
+.list-cd .collection .album:hover {
+  transform: rotate(2deg);
+  filter: grayscale(100%);
 }
 .list-cd .collection .album .layover {
   position: absolute;
@@ -113,13 +119,16 @@ header .personal h5 i {
 }
 .list-cd .collection .album .layover:hover, .list-cd .collection .album .layover:active {
   opacity: 1;
+  transition: all 0.4s ease;
+  scale: 1.2;
+  transform: rotate(-10deg);
 }
 .list-cd .collection .album .layover i {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 70px;
+  font-size: 80px;
   color: #fff;
 }
 .list-cd .collection .album .album-cover img {
