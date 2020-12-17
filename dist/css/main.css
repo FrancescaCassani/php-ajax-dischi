@@ -13,6 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 100vw;
+  background: #1e2d3c;
 }
 
 /* Set images */
@@ -25,6 +27,10 @@ header {
   justify-content: space-between;
   align-items: center;
   background: #2e3a46;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
 }
 header .logo img {
   max-height: 60px;
@@ -34,6 +40,7 @@ header .personal {
   justify-content: center;
   align-content: center;
   align-items: center;
+  color: #fff;
 }
 header .personal img {
   max-width: 30px;
@@ -41,6 +48,9 @@ header .personal img {
 
 .list-cd {
   flex-grow: 1;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 .list-cd .collection {
   display: flex;
@@ -48,14 +58,41 @@ header .personal img {
   justify-content: center;
   padding: 40px 15px;
   list-style: none;
+  margin-top: 50px;
 }
 .list-cd .collection .album {
-  flex-basis: 200px;
+  flex-basis: 280px;
   margin: 15px 25px;
   padding: 25px;
   text-align: center;
-  background: #2e3a46;
+  background: #000;
   color: #fff;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.list-cd .collection .album .layover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.list-cd .collection .album .layover:hover, .list-cd .collection .album .layover:active {
+  opacity: 1;
+}
+.list-cd .collection .album .layover i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  color: white;
 }
 .list-cd .collection .album .album-cover img {
   min-height: 170px;
