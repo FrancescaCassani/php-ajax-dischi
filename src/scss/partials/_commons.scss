@@ -1,0 +1,46 @@
+// RESET
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// GENERAL SETTINGS
+body {
+    font-family: sans-serif;
+}
+
+// CONTAINER
+.container {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+// LISTS
+.h-list {
+    display: flex;
+    list-style: none;
+}
+
+// TYPHOGRAPHY
+a {
+    text-decoration: none;
+    color: $actvieCol;
+}
+
+h2 {
+    color: $secondCol;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+p {
+    color: rgba(0,0,0,0.87);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 24px;
+    padding-top: 20px;
+}
