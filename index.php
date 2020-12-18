@@ -28,6 +28,16 @@
             </div>
         </header>
 
+
+        <!-- Selection genre -->
+        <div class="filter">
+            <select
+            v-model="activeArtist"
+            @change="getArtist">
+                <option value="all">All</option>
+            </select>
+        </div>
+
         <!-- MAIN CONTENT -->
         <div class="list-cd">
             <ul class="collection">
@@ -45,8 +55,6 @@
                 </li>
             </ul>
         </div>
-
-        
 
     </div>
     <script src="./dist/js/main.js"></script>

@@ -14424,22 +14424,47 @@ var spotify = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#spotify',
   data: {
     user: 'Frankie',
-    albums: []
+    albums: [],
+    activeArtist: 'all'
   },
   created: function created() {
     var _this = this;
 
     //console.log(window.location.href);
     var dataUrl = window.location.href + 'scripts/database.php';
-    console.log('ciao Vue');
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (response) {
+    console.log('Bella Vue!');
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (result) {
       // handle success
-      console.log(response.data);
-      _this.albums = response.data;
+      console.log(result.data);
+      _this.albums = result.data;
     })["catch"](function (error) {
       // handle error
       console.log(error);
     });
+  },
+  methods: {
+    getArtist: function getArtist() {
+      var _this2 = this;
+
+      //Call API
+      //console.log(window.location.href);
+      var dataUrl = window.location.href + 'scripts/database.php';
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (result) {
+        // handle success
+        var artistList = result.data;
+
+        if (_this2.activeArtist !== 'all') {
+          artistList = artistList.filter(function (element) {
+            return element.author.toLowerCase() === _this2.activeArtist;
+          });
+        }
+
+        _this2.albums = artistList;
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    }
   }
 });
 
