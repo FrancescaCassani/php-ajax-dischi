@@ -14438,7 +14438,6 @@ var spotify = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       console.log(result.data);
       _this.albums = result.data;
       _this.authors = result.data;
-      t;
     })["catch"](function (error) {
       // handle error
       console.log(error);

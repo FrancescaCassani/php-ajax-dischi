@@ -1,6 +1,6 @@
 <?php
 
-    $filteredData = [];
+    $filteredAuthor = [];
     $database = [
         [
             'title' => 'New Jersey',
@@ -47,25 +47,40 @@
     ];
 
 
+
 /*
 Ragionamento per ottenere gli autori dal database
 */
 
-
-if (! empty($_GET['author'] )){
+if (!empty($_GET['author']) ){
 
     foreach ($database as $data){
         if ($data['author'] == $_GET['author']){
-            $filteredData[] = $data;
+            $filteredAuthor [] = $data;
         }
         else if ( 'all' == $_GET['author'] ) {
-            $filteredData = $database;
+            $filteredAuthor  = $database;
         }
     };
 } else {
-    $filteredData = $database;
+    $filteredAuthor  = $database;
 };
+
+// if (!empty($_GET['title']) ){
+
+//     foreach ($database as $data){
+//         if ($data['title'] == $_GET['title']){
+//             $filteredTitle[] = $data;
+//         }
+//         else if ( 'all' == $_GET['author'] ) {
+//             $filteredTitle  = $database;
+//         }
+//     };
+// } else {
+//     $filteredTitle  = $database;
+// };
 header('Content-Type: application/json');
 
-echo json_encode($database);
+echo json_encode($filteredAuthor);
 ?>
+

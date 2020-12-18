@@ -19,7 +19,6 @@ const spotify = new Vue ({
                 console.log(result.data);
                 this.albums = result.data;
                 this.authors = result.data;
-                t
             })
             .catch(error => {
                 // handle error

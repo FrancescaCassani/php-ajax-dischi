@@ -18,11 +18,11 @@
             </div>
 
 
-        <!-- Selection genre -->
+        <!-- Selection Author -->
         <div class="filter">
-            <select v-model="activeArtist" @change="getArtist" >
-                <option value="all">All</option>
-                <option v-for="author in authors" >{{author.author}}</option>
+            <select v-model="activeArtist" @change="getArtist" value="">
+                <option value="all" selected>All</option>
+                <option v-for="(element, index) in authors" :value="element.author">{{element.author}}</option>
             </select>
         </div>
         
