@@ -1,5 +1,6 @@
 <?php
 
+    $filteredData = [];
     $database = [
         [
             'title' => 'New Jersey',
@@ -45,6 +46,25 @@
         ]
     ];
 
+
+/*
+Ragionamento per ottenere gli autori dal database
+*/
+
+
+if (! empty($_GET['author'] )){
+
+    foreach ($database as $data){
+        if ($data['author'] == $_GET['author']){
+            $filteredData[] = $data;
+        }
+        else if ( 'all' == $_GET['author'] ) {
+            $filteredData = $database;
+        }
+    };
+} else {
+    $filteredData = $database;
+};
 header('Content-Type: application/json');
 
 echo json_encode($database);

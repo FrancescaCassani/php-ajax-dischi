@@ -16,6 +16,15 @@
             <div class="logo">
                 <img src="./img/logo.png" alt="Spotify">
             </div>
+
+
+        <!-- Selection genre -->
+        <div class="filter">
+            <select v-model="activeArtist" @change="getArtist" >
+                <option value="all">All</option>
+                <option v-for="author in authors" >{{author.author}}</option>
+            </select>
+        </div>
         
             <div class="user">
                 <div class="personal">
@@ -26,17 +35,10 @@
                     <h5>{{user}}<i class="fas fa-angle-down"></i></h5>
                 </div>
             </div>
+
         </header>
 
 
-        <!-- Selection genre -->
-        <div class="filter">
-            <select
-            v-model="activeArtist"
-            @change="getArtist">
-                <option value="all">All</option>
-            </select>
-        </div>
 
         <!-- MAIN CONTENT -->
         <div class="list-cd">

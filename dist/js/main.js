@@ -14425,18 +14425,20 @@ var spotify = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   data: {
     user: 'Frankie',
     albums: [],
-    activeArtist: 'all'
+    authors: [],
+    activeArtist: 'all',
+    dataUrl: window.location.href + 'scripts/database.php'
   },
   created: function created() {
     var _this = this;
 
-    //console.log(window.location.href);
-    var dataUrl = window.location.href + 'scripts/database.php';
     console.log('Bella Vue!');
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (result) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(this.dataUrl).then(function (result) {
       // handle success
       console.log(result.data);
       _this.albums = result.data;
+      _this.authors = result.data;
+      t;
     })["catch"](function (error) {
       // handle error
       console.log(error);
@@ -14446,23 +14448,16 @@ var spotify = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     getArtist: function getArtist() {
       var _this2 = this;
 
-      //Call API
-      //console.log(window.location.href);
-      var dataUrl = window.location.href + 'scripts/database.php';
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (result) {
-        // handle success
-        var artistList = result.data;
-
-        if (_this2.activeArtist !== 'all') {
-          artistList = artistList.filter(function (element) {
-            return element.author.toLowerCase() === _this2.activeArtist;
-          });
+      var dataUlr = window.location.href + 'partials/database.php';
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(this.dataUrl, {
+        params: {
+          author: this.activeArtist
         }
-
-        _this2.albums = artistList;
+      }).then(function (result) {
+        _this2.albums = result.data;
       })["catch"](function (error) {
         // handle error
-        console.log(error);
+        console.log('errore:', error);
       });
     }
   }

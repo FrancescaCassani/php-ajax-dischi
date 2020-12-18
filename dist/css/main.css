@@ -74,12 +74,6 @@ header .personal h5 i {
   padding: 5px;
 }
 
-.filter {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 13px;
-}
-
 .list-cd {
   flex-grow: 1;
   width: 1200px;
