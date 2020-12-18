@@ -14422,20 +14422,25 @@ __webpack_require__.r(__webpack_exports__);
 
 var spotify = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#spotify',
-  albums: [],
-  data: {},
+  data: {
+    user: 'Frankie',
+    albums: []
+  },
   created: function created() {
     var _this = this;
 
     //console.log(window.location.href);
     var dataUrl = window.location.href + 'scripts/database.php';
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (result) {
-      _this.albums = result.data;
+    console.log('ciao Vue');
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (response) {
+      // handle success
+      console.log(response.data);
+      _this.albums = response.data;
     })["catch"](function (error) {
+      // handle error
       console.log(error);
     });
-  },
-  methods: {}
+  }
 });
 
 /***/ }),

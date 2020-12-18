@@ -3,25 +3,30 @@ import axios from 'axios';
 
 const spotify = new Vue ({
     el: '#spotify',
-    albums: [],
     data: {
-
+        user: 'Frankie',
+        albums: [],
     },
     created() {
         //console.log(window.location.href);
         const dataUrl = window.location.href + 'scripts/database.php';
 
-        axios
-            .get(dataUrl)
-            .then(result => {
+        console.log('Bella Vue!');
 
-            this.albums = result.data;
+        axios.get(dataUrl)
+            .then(response => {
+                // handle success
+                console.log(response.data);
+                this.albums = response.data;
             })
             .catch(error => {
+                // handle error
                 console.log(error);
-            });
+            })
     },
-    methods: {
-
-    }
 });
+
+
+
+        
+        

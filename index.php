@@ -1,8 +1,3 @@
-<!-- DATABASE PHP -->
-<!-- <?php
-require_once __DIR__ . '/scripts/database.php';
-?> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +23,7 @@ require_once __DIR__ . '/scripts/database.php';
                         <h4>Upgrade</h4>
                     </div>
                     <img src="./img/logo.png" alt="User">
-                    <h5>Frankie<i class="fas fa-angle-down"></i></h5>
+                    <h5>{{user}}<i class="fas fa-angle-down"></i></h5>
                 </div>
             </div>
         </header>
@@ -36,23 +31,22 @@ require_once __DIR__ . '/scripts/database.php';
         <!-- MAIN CONTENT -->
         <div class="list-cd">
             <ul class="collection">
-                <!-- LOGICA PHP -->
-                <?php foreach ($database as $data ) { ?>
-                    <li class="album">
-                        <div class="album-cover">
-                            <img src="<?= $data['poster']; ?>"/> 
-                        </div>
-                        <div class="layover">
-                            <i class="far fa-play-circle"></i>
-                        </div>
-                        <h3 class="title"> <?php echo $data['title']; ?> </h3>
-                        <h4 class="autore"> <?php echo $data['author']; ?> </h4>
-                        <h3 class="year"> <?php echo $data['year']; ?> </h3>
-                        <h4 class="genre"> <?php echo $data['genre']; ?> </h4>
-                    </li>
-                <?php }?>
+                <li class="album" v-for="album in albums">
+                    <div class="album-cover">
+                        <img :src="album.poster"/> 
+                    </div>
+                    <div class="layover">
+                        <i class="far fa-play-circle"></i>
+                    </div>
+                    <h3 class="title"> {{album.title}} </h3>
+                    <h4 class="autore"> {{album.author}} </h4>
+                    <h3 class="year"> {{album.year}} </h3>
+                    <h4 class="genre"> {{album.genre}} </h4>
+                </li>
             </ul>
         </div>
+
+        
 
     </div>
     <script src="./dist/js/main.js"></script>
