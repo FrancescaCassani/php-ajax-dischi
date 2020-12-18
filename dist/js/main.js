@@ -14420,6 +14420,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 
 
+var spotify = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+  el: '#spotify',
+  albums: [],
+  data: {},
+  created: function created() {
+    var _this = this;
+
+    //console.log(window.location.href);
+    var dataUrl = window.location.href + 'scripts/database.php';
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (result) {
+      _this.albums = result.data;
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  },
+  methods: {}
+});
 
 /***/ }),
 
@@ -14441,8 +14458,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/php-ajax-dischi/src/js/main.js */"./src/js/main.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/php-ajax-dischi/src/scss/main.scss */"./src/scss/main.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/Progetti/php-ajax-dischi/src/js/main.js */"./src/js/main.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/Progetti/php-ajax-dischi/src/scss/main.scss */"./src/scss/main.scss");
 
 
 /***/ })

@@ -1,7 +1,7 @@
 <!-- DATABASE PHP -->
-<?php
-include_once __DIR__ . '/scripts/database.php';
-?>
+<!-- <?php
+require_once __DIR__ . '/scripts/database.php';
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
